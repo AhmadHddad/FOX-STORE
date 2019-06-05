@@ -1,0 +1,5 @@
+Hello, 
+
+This is the DB, i am using wamp on my windows machine, so the directory is : wamp64\bin\mysql\mysql5.7.24\data
+copy the fox folder to that directory and everything should work just fine :D.
+Enjoy.

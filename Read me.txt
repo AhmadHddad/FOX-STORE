@@ -1,0 +1,6 @@
+Hello World!
+
+this is my first PHP project, its learning journey (did not end yet).
+Its shopping cart static website with paypal integration, i hope to make it interactive site using reactjs or angularjs but thats another journy.
+the DB file includes another readme file.
+Enjoy!
