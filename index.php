@@ -4,8 +4,10 @@ ini_set('mysql.connect_timeout', 3000);
 ini_set('default_socket_timeout', 3000);
 
 include('app\init.php');
-$template->set_data('header', 'fuck you');
+
 $template->set_data('page_class', 'home');
+
+
 
 
 if (isset($_GET['id']) && is_numeric($_GET['id'])) {

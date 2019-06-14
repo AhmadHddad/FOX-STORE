@@ -48,7 +48,6 @@ class Products
                 }
             }
         } elseif ($id != null) {
-            //echo "fuck your from elseif 1";
 
             // get one specific products based on one id 
             $stmt = $DataBase->prepare("SELECT products.id,products.name,products.description,products.price,
@@ -69,7 +68,6 @@ class Products
                 $stmt->close();
             }
         } else {
-            // echo "fuck you from else all";
 
             // get all products in the DB
             $result = $DataBase->query("SELECT * FROM " . $this->db1_table . " ORDER BY NAME");
@@ -199,7 +197,10 @@ class Products
                 $data .= '><a href="' . SITE_PATH . 'product.php?id=' . $product['id'] . '">';
                 $data .= '<img src="' . IMAGE_PATH . $product['image'] . '" alt="' . $product['name'] . '"><br>';
                 $data .= '<strong>' . $product['name'] . '</strong></a><br/>$' . $product['price'];
-                $data .= '<br><a class="button_sml" href="' . SITE_PATH . 'cart.php?id=' . $product['id'] . '">Add to cart</a></li>';
+                if (isset($_SESSION['username'])) {
+                    $data .= '<br><a class="button_sml" href="' . SITE_PATH . 'cart.php?id=' . $product['id'] . '">Add to cart</a></li>';
+                }
+               
                 $i++;
             }
         }

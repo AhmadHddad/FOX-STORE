@@ -1,5 +1,5 @@
 <?php
-
+include('/logincheck.php');
 include('app\init.php');
 
 $template->set_data('page_class', 'success');

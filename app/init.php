@@ -3,6 +3,13 @@
 <?php
 session_start();
 
+// if user wants to log out then sessoin destroy 
+if (isset($_GET['logout'])) {
+	session_destroy();
+	unset($_SESSION['username']);
+	header("location: index.php");
+}
+
 // error reporting
 mysqli_report(MYSQLI_REPORT_ERROR);
 ini_set('display_errors', 1);
@@ -43,4 +50,3 @@ $cart = new Cart();
 
  $template->set_data('cart_total_items', $cart->get_total_items());
  $template->set_data('cart_total_cost', $cart->get_total_cost());
-

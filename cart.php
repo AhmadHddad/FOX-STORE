@@ -1,8 +1,13 @@
 <?php
+
+
+// old 
 include('app\init.php');
 
 $template->set_data('page_class', 'shoppingcart');
-        
+
+// check if user is logged in
+if (isset($_SESSION['username'])) :
 
 if (isset($_GET['id']) && is_numeric($_GET['id'])) {
     //check if adding valid item
@@ -57,10 +62,16 @@ if (isset($_POST['update'])) {
 $display = $cart->create_cart();
 $template->set_data('cart_rows', $display);
 
+endif;
+
+// if user is not logged in 
+if (!isset($_SESSION['username'])) {
+    $template->set_alert('you must log in first' , 'error');
+}
 
 // create category nav
 $category_nav = $categories->create_category_nav();
 $template->set_data('page_nav', $category_nav);
 
 $template->load('app\views\v_cart.php', 'Shopping Cart');  
-
+//endif;

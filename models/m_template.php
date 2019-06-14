@@ -86,9 +86,8 @@ class Template
     public function get_alert()
     {
         $data = '';
-
         foreach ($this->alert_types as $alerts) {
-            if (isset($_SESSION[$alerts])) {
+            if (isset($_SESSION[$alerts]) && is_array($_SESSION[$alerts]) ) {
                 foreach ($_SESSION[$alerts] as $value) {
                     $data .= '<li class="' . $alerts . '">'  . $value . '</li>';
                 }
