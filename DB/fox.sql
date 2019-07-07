@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: May 26, 2019 at 05:46 PM
+-- Generation Time: Jun 16, 2019 at 10:19 AM
 -- Server version: 5.7.24
--- PHP Version: 7.2.14
+-- PHP Version: 7.3.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -83,17 +83,18 @@ INSERT INTO `products` (`id`, `category_id`, `name`, `description`, `price`, `im
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `username` varchar(8) NOT NULL,
-  `password` varchar(10) NOT NULL,
+  `username` varchar(16) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `password`) VALUES
-(1, 'ahmad', '12345');
+INSERT INTO `users` (`id`, `username`, `email`, `password`) VALUES
+(2, 'ahmadasd', 'a@a.com', '202cb962ac59075b964b07152d234b70');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
